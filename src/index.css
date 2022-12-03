@@ -1,13 +1,311 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e4dcd6;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main_container {
+background-color: #ffffff;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+border-radius: 7px;
+height: 530px;
+width: 750px;
+display: flex;
+}
+
+.container_menu {
+  width: 30%;
+  background-color: #f5f5f4;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  padding-top: 30px;
+  color: #515151;
+}
+
+.alltask_container {
+  margin-bottom: 30px;
+}
+
+.container_tasks {
+  width: 70%;
+  flex: 1;
+  padding: 60px;
+  position: relative;
+}
+
+.active {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  
+}
+
+.container_menu li {
+  position: relative;
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  column-gap: 12px;
+  font-size: 16px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 12.5px;
+
+}
+
+
+.container_menu li:hover {
+  background-color: #fcfcfc8a;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+.add_btn {
+  margin-top: 30px;
+  color: #525252;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.add_btn:hover {
+  opacity: 1;
+}
+
+.modal_add_list {
+  z-index: 9;
+  position: relative;
+  width: 220px;
+  height: 120px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  margin-left: 30px;
+  padding: 18px;
+}
+
+.field {
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.field:hover {
+  border-color: #c6c6c6;
+}
+
+.field:focus {
+  border-color: #909090;
+}
+
+.btn {
+  margin-top: 15px;
+  border-radius: 4px;
+  background-color: #cd8a59;
+  color: #ffffff;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #c07849;
+}
+
+.btn:active {
+  background-color: #aa6a3f;
+}
+
+.close_img {
+  cursor: pointer;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+
+.close_img:hover {
+  color: #676767;
+}
+
+.close_img {
+  position: absolute;
+  color: #515151;
+}
+
+.close_img:hover {
+  color: #717171;
+}
+
+.menu_text {
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 140px; 
+  white-space: nowrap;
+}
+
+.empty_todo {
+  text-align: center;
+  padding-top: 20px;
+  color: #969696;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.tasks_title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #515151;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #96969686;
+
+}
+
+.tasks_items ul {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.tasks_items ul li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #515151;
+  height: 35px;
+  padding-left: 20px;
+  border-radius: 4px;
+}
+
+.tasks_items ul li:hover {
+  background-color: #f5f5f4;
+}
+
+.tasks_items ul li.checked {
+  background-color: #a9ffb6;
+  text-decoration: line-through
+}
+
+
+.img_delete_task {
+  color: rgb(101, 101, 101);
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+
+.img_delete_task:hover {
+  color: rgb(204, 27, 27);
+}
+
+.add_tasks_input {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_tasks_input .btn {
+  width: 100px;
+  margin: 0;
+}
+
+.add_tasks_input .field {
+width: 250px;
+margin-right: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 550px ) {
+
+
+  body {
+    margin-top: 0;
+    display: block;
+  }
+
+  .main_container {
+
+    min-height: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 0;
+    position: absolute;
+  }
+
+  .container_menu {
+    width: 100%;
+    height: 10%;
+    padding-top: 0;
+    display: inline-flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    background-color: #e4dcd6;
+    border-bottom-left-radius: 0;
+  }
+
+  .ul_menu {
+    display: inline-flex;
+    flex-direction: row;
+    padding-top: 10px;
+  }
+
+  .container_menu li {
+    width: 140px;
+    background-color: #ffffff82;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+  }
+
+
+  .container_tasks {
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
+    padding: 35px;
+
+  }
+
+  .tasks_items ul {
+    height: 400px;
+    overflow-y: auto;
+}
+
+  .alltask_container {
+    margin-bottom: 50px;
+  }
+
+  .add_tasks_input {
+    position: relative;
+    
+  }
+
+  .container_menu li:hover {
+    width: 140px;
+    background-color: #ffffff;
+    border-radius: 10px;
+  
+  }
+
+  .active {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+  }
 }
