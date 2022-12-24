@@ -4,6 +4,7 @@ import Tasks from "./Components/Tasks";
 
 import {FaTasks} from 'react-icons/fa'
 import {FcBookmark, FcClapperboard, FcShop, FcReadingEbook, FcBriefcase, FcList} from 'react-icons/fc'
+import WeatherWidget from "./Components/WeatherWidget";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="main_container">
+    <WeatherWidget/>
     <div className='container_menu'>
     <div className="alltask_container">
 

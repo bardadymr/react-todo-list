@@ -10,6 +10,7 @@ body {
 }
 
 .main_container {
+position: relative;
 background-color: #ffffff;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 border-radius: 7px;
@@ -228,6 +229,58 @@ width: 250px;
 margin-right: 20px;
 }
 
+.weatherWidget {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 20px;
+  bottom: 30px;
+  height: 100px;
+  width: 180px;
+  color: #515151;
+}
+
+.tempNow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.weatherDescription {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.dateNow {
+  font-size: 12px;
+}
+
+.refreshIcon:hover {
+  cursor: pointer;
+  color: #777777;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(-360deg)} 
+  }
+   
+  .refreshIcon-start {
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  }
+
+
+ 
+
 /* Mobile */
 
 @media (max-width: 550px ) {
@@ -256,6 +309,7 @@ margin-right: 20px;
     overflow-x: auto;
     background-color: #e4dcd6;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 
   .ul_menu {
@@ -266,7 +320,7 @@ margin-right: 20px;
 
   .container_menu li {
     width: 140px;
-    background-color: #ffffff82;
+    background-color: #fff7f1e1;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
@@ -308,4 +362,49 @@ margin-right: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
   }
+
+  .ul_menu {
+    padding-right: 10px;
+  }
+
+  .weatherWidget {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin-right: 0;
+    row-gap: 5px;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    position: relative;
+    height: 30px;
+  }
+
+  .weatherDescription {
+    font-size: 14px;
+  }
+
+  .tempNow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+
+  .weather-icon {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+  }
+
+  .weather-body {
+    background-color: #ededed;
+  }
+
+
 }
